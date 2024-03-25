@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>First website</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link href="./external.css" rel="stylesheet" />
+        <style>
+            /* css content - syntax
+                selector {
+                    property: "new-value";
+                }
+            */
+
+            /* selectors */
+                /* id selector (#) */
+                    #para {
+                        color: red;
+                    }
+
+                /* class selector (.) */
+                    .textbox {
+                        padding: 5px;
+                        margin: 5px;
+                        border: 4px solid blue;
+                    }
+                    
+                /* tag selector (tag name) */
+                    input {
+                        background-color: lightgreen;
+                    }
+
+                /* grouping selector (,) */
+                    table, td, th {
+                        border: 1px dotted red;
+                        border-style:groove;
+                    }
+                    
+                /* universal selector (*) */
+                    body * {
+                        margin: 0;
+                    }
+
+                /* attribute selector */
+                    a[target="_blank"] {
+                        border: 5px solid red;
+                    }
+                    [src="./assets/image.png"] {
+                        border: 5px solid red;
+                    }
+                    [type] {
+                        border: 5px solid red;
+                    }
+
+                /* relational selector */
+                    section * {
+                        background-color: white;
+                        border: 2px solid red;
+                        margin: 10px;
+                        padding: 5px;
+                    }
+                    
+                    /* descendent selector ( ) */
+                        #rohan div {
+                            background-color: #b466b4;
+                        }
+
+                    /* child selector (>) */
+                        #rohan>div {
+                            border: 5px dashed green;
+                        }    
+
+                    /* adjacent selector (+) */
+                        #lee+div {
+                            background-color: greenyellow;
+                        }
+                        
+                    /* sibling selector (~) */
+                        #bob~div {
+                            background-color: olive;
+                        }
+                
+
+                /* css properties*/
+                    /* grid layout */
+                        .item1 { grid-area: header; }
+                        .item2 { grid-area: menu; }
+                        .item3 { grid-area: main; }
+                        .item4 { grid-area: aside; }
+                        .item5 { grid-area: footer; }
+
+                        .grid-container {
+                            display: grid;
+                            grid-template-areas:
+                                'header header header header header header'
+                                'menu main main main aside aside'
+                                'menu footer footer footer footer footer';
+                            gap: 10px;
+                            background-color: #2196F3;
+                            padding: 10px;
+                        }
+
+                        .grid-container > div {
+                            background-color: rgba(255, 255, 255, 0.8);
+                            text-align: center;
+                            padding: 20px 0;
+                            font-size: 30px;
+                        }
+                        .grid-container > .item4 {
+                            padding: 100px;
+                        }
+                    /* flex layout */
+                        #flex-container {
+                            height: 500px;
+                            margin: 30px;
+                            background-color: #2196F3;
+                            display: flex;
+                            flex-direction: row;
+                            align-items:baseline;
+                            justify-content: space-between;
+                        }
+
+                        #flex-container>div {
+                            padding: 15px;
+                            background-color: aliceblue;
+                            margin: 10px;
+                        }
+                    /* display property */
+                        #div2 {
+                            display: inline;
+                        }
+                        #div {
+                            display: inline-block;
+                            border: 2px solid red;
+                            margin: 100px;
+                        }
+                        #span {
+                            display: block;
+                        }
+                    
+                        /* position property */
+                            #position {
+                                top:0px;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                position:static;
+                                position: relative;
+                                position: absolute;
+                                position: fixed;
+                                position: sticky;
+                            }
+                        
+                        /* background and foreground properties */
+                            #prop {
+                                background-color: red;
+                                background-image: url();
+                                background-position: top;
+                                background-repeat: no-repeat;
+                                background-size:cover;
+                                background-size: contain;
+                                font-size: ;
+                                font-family: ;
+                                font-weight: ;
+                                color: ;
+                                font-style: ;
+                                text-decoration: ;
+                                text-align: ;
+                            }
+
+                /* css values */
+                    /* text values */
+                        #example {
+                            background-color: chartreuse;
+                            font-size: x-large;
+                            font-weight: lighter;
+                        }
+                    /* numeric values */
+                        /* absolute values */
+                            #example {
+                                font-weight: 300;
+                                font-size: 10px;
+                                font-size: 10cm;
+                                font-size: 10pc;
+                            }
+
+                        /* relative values */
+                            #emaple {
+                                font-size: 80%;
+                                font-size: 2em;
+                                font-size: 10vh;
+                            }
+                    /* colour values */
+                        #example {
+                            color: #2196F3;     /* hex value */
+                            color: rgba(255,0,0,0);   /* rgba value */
+                            color: hsl(168, 71%, 55%);
+                            color: hwb(0 46% 54%);
+                        }
+
+                /* css animation */
+                    #div1 {
+                        background-color:#b466b4; 
+                        height: 200px; 
+                        width: 200px;
+                    }
+
+                    #div1 {
+                        animation-name: example;
+                        animation-duration: 2s;
+                        animation-delay: 5s;
+                        animation-direction: alternate-reverse;
+                        animation-iteration-count: infinite;
+                        animation-timing-function:ease;
+                    }
+
+                    @keyframes example {
+                        from { background-color: #2196F3;}
+                        to { background-color: #b466b4;}
+                    }
+
+                    #div2 {
+                        position: relative;
+                        top: 250px;
+                        background-color:#b466b4; 
+                        height: 200px; 
+                        width: 200px;
+                    }
+
+                    #div2 {
+                        animation-name: example;
+                        animation-duration: 2s;
+                        animation-delay: 5s;
+                        animation-direction: alternate-reverse;
+                        animation-iteration-count: infinite;
+                        animation-timing-function:cubic-bezier(0.455, 0.03, 0.515, 0.955)
+                    }
+
+                    @keyframes example {
+                        from { background-color: #2196F3;}
+                        to { background-color: #b466b4;}
+                    }
+
+                    
+                /* css pseudo classes and states */
+                    #pseudoclass::after {
+
+                    }
+                    #css-states:last-child {
+
+                    }
+                    
+                /* css prefixes */
+                    #property {
+                        -o-animation: ;
+                        -moz-animation: ;
+                        -ms-behavior: ;
+                        -webkit-animation: ;
+                    }
+                    
+                /* responsive webs design */
+                    @media screen and (max-width:900px) {
+                        body {
+                            background-color: chocolate;
+                        }
+                    }
+                    @media screen and (min-width: 300px) {
+                        body {
+                            background-color: cornflowerblue;
+                        }
+                    }
+
+        </style>
+        <script>
+            // javascript content
+        </script>
+    </head>
+    <body>
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <!-- css flex layout -->
+        <div id="flex-container">
+            <div class="item1">1</div>
+            <div class="item2">2</div>
+            <div class="item3" style="font-size: 50px;">3</div>
+            <div class="item4">4</div>
+            <div class="item5">5</div>
+            <div class="item6">6</div>
+        </div>
+        
+        <!-- css grid layout -->
+        <div class="grid-container">
+            <div class="item1">Header</div>
+            <div class="item2">Menu</div>
+            <div class="item3">Main</div>  
+            <div class="item4">Right</div>
+            <div class="item5">Footer</div>
+        </div>
+
+        <!-- css selectors - relational -->
+        <section>
+            <div id="john">
+                <div id="steve">
+                    <div id="lee"></div>
+                    <div id="bob"></div>
+                    <div id="ella"></div>
+                    <div id="emma"></div>
+                </div>
+                <div id="rohan">
+                    <div id="sal"></div>
+                    <div id="tom">
+                        <div id="sam"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- basic tags -->
+            <p id="para">This is a paragraph tag</p>
+            <p>This is another paragraph tag</p>
+            <div>This is a div tag</div>
+            <div>This is another div tag</div>
+            <span>This is a span tag</span>
+            <span>This is another span tag</span>
+            <br>
+            <hr>
+            <a href="#pre" target="_blank">Google Homepage</a>
+            <pre id="pre">dfg     ddf    gdf</pre>
+            <br><br><hr><br>
+
+        <!-- semantic tags -->
+            <header></header>
+            <nav></nav>
+            <section></section>
+            <main></main>
+            <aside></aside>
+            <footer></footer>
+            <time></time>
+
+            <br><br><hr><br>
+
+        <!-- multimedia tags -->
+            <img src="https://www.w3schools.com/images/img_program_up_160.png" alt="image text" />
+            <img src="./assets/image.png" alt="image text" height="250px" />
+            
+            <audio controls>
+                <source src="./assets/sample-3s (1).mp3" srcset="" />
+            </audio>
+            <video controls height="200px"> 
+                <source src="./assets/sample-5s.mp4"  />
+            </video>
+
+            <img 
+                srcset="image-160.jpg 160w, image-320.jpg 320w, image-640.jpg 640w, image-1280.jpg 1280w" 
+                sizes="(max-width: 480px) 160vw, (max-width: 900px) 320vw, 640px" />
+            <picture>
+                <source media="(min-width:650px)" srcset="img_pink_flowers.jpg">
+                <source media="(min-width:465px)" srcset="img_white_flower.jpg">
+                <img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
+            </picture>
+
+            <embed width="560" height="315" src="https://www.youtube.com/embed/l_cqTlfk6JQ?si=8hIW3qQoohxcvHB9" />
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Fu1l7B6FCs4?si=gPy4raS2UUJmIt6t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <embed src="https://www.tutorialrepublic.com/" height="500px" width="300px" />
+
+            <br><br><hr><br>
+
+        <!-- formatting tags -->
+            <b>Bold</b><i>Italics</i><u>Underline</u>
+            <br>
+            <strong>Strong</strong><em>Emphasis</em><ins>Insert</ins>
+            
+            <marquee direction="down">
+                <center>
+                    <p><mark>HTML</mark> stands for Hypertext <del>Marking</del><ins>Markup</ins> Language</p>
+                </center>
+            </marquee>
+
+            2<sup>2</sup><br>
+            d<sub>x</sub>
+
+            <small></small>
+
+            <blockquote cite="https://www.google.com">
+                <cite></cite>
+                <caption></caption>
+            </blockquote>
+
+            <br><br><hr><br>
+
+        <!-- list tags -->
+            <ol type="A">
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+            </ol>
+            <ul type="square">
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+            </ul>
+            <dl>
+                <dt>HTML: Hypertext Markup Language</dt>
+                <dd>HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. It defines the content and structure of web content. It is often assisted by technologies such as Cascading Style Sheets and scripting languages such as JavaScript.</dd>
+            </dl>
+
+            <br><br><hr><br>
+
+        <!-- heading tags -->
+            <h1>Heading Tag 1</h1>
+            <h2>Heading Tag 2</h2>
+            <h3>Heading Tag 3</h3>
+            <h4>Heading Tag 4</h4>
+            <h5>Heading Tag 5</h5>
+            <h6>Heading Tag 6</h6>
+
+            <br><br><hr><br>
+
+        <!-- table tags -->
+            <table style="border:2px solid black;">
+                <caption>Student Database</caption>
+                <colgroup>
+                    <col span="2" style="background-color: #b466b4;"/>
+                    <col />
+                    <col style="background-color: aquamarine;" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th colspan="2">Student Name</th>
+                        <th rowspan="2">Email Address</th>
+                        <th rowspan="2">Location</th>
+                        <th rowspan="2">Aggregate</th>
+                        <th colspan="3">Marks</th>
+                    </tr>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Subject 1</th>
+                        <th>Subject 2</th>
+                        <th>Subject 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Akash</td>
+                        <td>Soni</td>
+                        <td>akash@gmail.com</td>
+                        <td>Bengaluru</td>
+                        <td>87%</td>
+                        <td>35</td>
+                        <td>65</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>Sravanthi</td>
+                        <td>Lanke</td>
+                        <td>sravanthi@gmail.com</td>
+                        <td>Pune</td>
+                        <td>89%</td>
+                        <td>35</td>
+                        <td>65</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>Reshma</td>
+                        <td>K</td>
+                        <td>reshma@gmail.com</td>
+                        <td>Chennai</td>
+                        <td>76%</td>
+                        <td>35</td>
+                        <td>65</td>
+                        <td>32</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+
+                </tfoot>
+            </table>
+
+            <br><br><hr><br>
+
+        <!-- form tags -->
+            <form method="post" action="welcome.php">
+                <label>Username:</label>
+                <input type="text" name="uname" />
+                <br>
+                <label>Password:</label>
+                <input type="password" name="pwd" />
+                <textarea rows="10" cols="50"></textarea>
+                <button type="submit">SUBMIT</button>
+            </form>
+
+            <form>
+                <fieldset>
+                    <legend>HTML Input Tags:</legend>
+                    
+                    <!--text fields-->
+                    <input class="textbox" type="text" name="name_inp" id="name_txt" class="textbox" value="Hello" required/>
+                    <input class="textbox" type="url" placeholder="Enter a URL"/>
+                    <input class="textbox" type="search" />
+                    <input class="textbox" type="password" />
+                    <input class="textbox" id="number-input" type="number" />
+                    <input class="textbox" id="email-input" type="email" />
+                    <input class="textbox" type="tel">
+                    <textarea class="textbox" rows="10" cols="50"></textarea><br><br>
+        
+                    <!-- date/time -->
+                    <input id="date-picker" type="date" name="date">
+                    <input type="datetime-local">
+                    <input type="datetime" >
+                    <input type="month">
+                    <input type="week">
+                    <input type="time">
+                    <br><br>
+        
+                    <!--check box-->
+                    <input name="chk1" type="checkbox"><label>Option 1</label>
+                    <input name="chk2" type="checkbox"><label>Option 2</label>
+        
+                    <!-- radiobtn -->
+                    <input name="gender" type="radio" value="Male"><label>Male</label>
+                    <input name="gender" type="radio" value="female"><label>Female</label>
+                    <input name="gender" type="radio" value="others"><label>Others</label>
+        
+                    <!-- dropdown -->
+                    <select name="course">
+                        <option value="">--select one--</option>
+                        <option value="mca">MCA</option>
+                        <option value="BCA">BCA</option>
+                        <option value="MSc">MSc</option>
+                        <option value="BSc">BSc</option>
+                    </select>
+
+                    <!-- selectors -->
+                    <input type="color" name="color">
+                    <input type="file">
+                    
+                    <input type="range" name="range" min="0" max="10">
+        
+                    <!-- input buttons-->
+                    <input type="button" value="CLICK" />
+                    <input type="submit" value="SUBMIT"/>
+                    <input type="reset" />
+                    <input type="image" src="list.png" alt="Submit" width="48" height="48">
+        
+                    <!-- button buttons -->
+                    <button type="submit">Submit LOGIN</button>
+                    <button type="button">Button</button>
+                    <button type="reset">Reset</button>
+                </fieldset>
+            </form>
+
+            <br><br><hr><br>
+    </body>
+</html>
